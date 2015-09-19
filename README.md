@@ -2,7 +2,7 @@
 
 Patches for GnuWin32
 
-## patch-10
+## patch-01
 
 Follow the instructions and do install the original GnuWin32. 
 
