@@ -159,11 +159,6 @@ if not exist "Start Menu\hlp" mkdir "Start Menu\hlp"
 if not exist "bin\set_gnuwin32.bat" goto test_if_links_exist
 
 bin\mkshortcut -a "/K """"""%CD%\bin\set_gnuwin32.bat""" -s gnuwin32 -l EN"""" -i "%CD%\gnuwin32.ico" -d "Environment for gnuwin32 tools" -w "%CD:*:=%" -n "Start Menu\gnuwin32.lnk" "%comspec:*:=%"
-if not exist bin\sed.exe goto test_if_links_exist
-
-bin\sed.exe -T "s/set GNUWIN32=.*/set GNUWIN32=%CD:\=\\%/g" bin\set_gnuwin32.bat >bin\set_gnuwin32.tmp
-del bin\set_gnuwin32.bat
-ren bin\set_gnuwin32.tmp set_gnuwin32.bat
 
 ::
 :: Test if the shortcuts are created already by update-links.txt

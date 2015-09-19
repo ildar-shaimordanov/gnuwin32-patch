@@ -22,7 +22,7 @@ if exist %TEMP%.\set_env.bat del %TEMP%.\set_env.bat
 :: Customizations
 :: --------------
 ::
-if "%GNUWIN32%"=="" set GNUWIN32=%ProgramFiles%\gnuwin32
+if "%GNUWIN32%"=="" for /f "tokens=*" %%p in ( "%~dp0.." ) do set "GNUWIN32=%%~fp"
 
 ::
 :: The Program
