@@ -14,7 +14,7 @@ USERNAME="$( id -un )"
 ORIGINAL_TMP=$TMP
 ORIGINAL_TEMP=$TEMP
 tmp="$( cd "$ORIGINAL_TMP" ; pwd -W )"
-tmep="$( cd "$ORIGINAL_TEMP" ; pwd -W )"
+temp="$( cd "$ORIGINAL_TEMP" ; pwd -W )"
 TMP="/tmp"
 TEMP="/tmp"
 
@@ -42,7 +42,7 @@ elif [ ! "x${KSH_VERSION}" = "x" ]
 then
 	typeset -l HOSTNAME="$(/usr/bin/hostname)"
 	profile_d sh
-	PS1=$(print '\033]0;${PWD}\n\033[32m${USER}@${HOSTNAME} \033[33m${PWD/${HOME}/~}\033[0m\n$ ')
+	PS1="$( print '\033]0;${PWD}\n\033[32m${USER}@${HOSTNAME} \033[33m${PWD/${HOME}/~}\033[0m\n$ ' )"
 elif [ ! "x${ZSH_VERSION}" = "x" ]
 then
 	HOSTNAME="$(/usr/bin/hostname)"

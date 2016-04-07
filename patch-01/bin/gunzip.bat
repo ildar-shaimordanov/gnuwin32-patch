@@ -1,2 +1,1 @@
-@echo off
-gzip -d %*
+@gzip -d %*
